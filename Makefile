@@ -117,61 +117,37 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named hello_cmake
+# Target rules for targets named main
 
 # Build rule for target.
-hello_cmake: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hello_cmake
-.PHONY : hello_cmake
+main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
+.PHONY : main
 
 # fast build rule for target.
-hello_cmake/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_cmake.dir/build.make CMakeFiles/hello_cmake.dir/build
-.PHONY : hello_cmake/fast
+main/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
 
 #=============================================================================
-# Target rules for targets named hello
+# Target rules for targets named vec
 
 # Build rule for target.
-hello: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hello
-.PHONY : hello
+vec: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vec
+.PHONY : vec
 
 # fast build rule for target.
-hello/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/build
-.PHONY : hello/fast
-
-src/hello.o: src/hello.cpp.o
-.PHONY : src/hello.o
-
-# target to build an object file
-src/hello.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/src/hello.cpp.o
-.PHONY : src/hello.cpp.o
-
-src/hello.i: src/hello.cpp.i
-.PHONY : src/hello.i
-
-# target to preprocess a source file
-src/hello.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/src/hello.cpp.i
-.PHONY : src/hello.cpp.i
-
-src/hello.s: src/hello.cpp.s
-.PHONY : src/hello.s
-
-# target to generate assembly for a file
-src/hello.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/src/hello.cpp.s
-.PHONY : src/hello.cpp.s
+vec/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vec.dir/build.make CMakeFiles/vec.dir/build
+.PHONY : vec/fast
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_cmake.dir/build.make CMakeFiles/hello_cmake.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -179,7 +155,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_cmake.dir/build.make CMakeFiles/hello_cmake.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -187,8 +163,32 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_cmake.dir/build.make CMakeFiles/hello_cmake.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
+
+src/test_vec.o: src/test_vec.cpp.o
+.PHONY : src/test_vec.o
+
+# target to build an object file
+src/test_vec.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vec.dir/build.make CMakeFiles/vec.dir/src/test_vec.cpp.o
+.PHONY : src/test_vec.cpp.o
+
+src/test_vec.i: src/test_vec.cpp.i
+.PHONY : src/test_vec.i
+
+# target to preprocess a source file
+src/test_vec.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vec.dir/build.make CMakeFiles/vec.dir/src/test_vec.cpp.i
+.PHONY : src/test_vec.cpp.i
+
+src/test_vec.s: src/test_vec.cpp.s
+.PHONY : src/test_vec.s
+
+# target to generate assembly for a file
+src/test_vec.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vec.dir/build.make CMakeFiles/vec.dir/src/test_vec.cpp.s
+.PHONY : src/test_vec.cpp.s
 
 # Help Target
 help:
@@ -198,14 +198,14 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... hello"
-	@echo "... hello_cmake"
-	@echo "... src/hello.o"
-	@echo "... src/hello.i"
-	@echo "... src/hello.s"
+	@echo "... main"
+	@echo "... vec"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/test_vec.o"
+	@echo "... src/test_vec.i"
+	@echo "... src/test_vec.s"
 .PHONY : help
 
 
